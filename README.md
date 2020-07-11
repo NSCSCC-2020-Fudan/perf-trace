@@ -1,6 +1,20 @@
 # 性能测试 trace
 
-NOTE: 这个不是官方的 golden_trace。
+**NOTE**: 这个不是官方的 `golden_trace`。
+
+```shell
+$ ls -1sh **/*.txt
+2.1M bitcount/bitcount.txt
+ 11M bubble_sort/bubble_sort.txt
+ 24M coremark/coremark.txt
+ 14M crc32/crc32.txt
+2.9M dhrystone/dhrystone.txt
+9.8M quick_sort/quick_sort.txt
+9.4M select_sort/select_sort.txt
+ 11M sha/sha.txt
+940K stream_copy/stream_copy.txt
+6.6M stringsearch/stringsearch.txt
+```
 
 包括完整的指令运行（来自 writeback 阶段的 debug 信号）、AXI 总线传输（来自 GS132 内部出来的 AXI 信号）。
 
@@ -11,8 +25,10 @@ NOTE: 这个不是官方的 golden_trace。
 * `README.md`：此文件。
 * `.gitignore`
 * `playground.ipynb`：一个简单分析抓取到的 trace 的 IPython Notebook（Jupyter）。
+* `playground.py`：`playground.ipynb` 中的 Python 代码。
 * `tracker.v`：trace 抓取的源码。
 * `compiled/`：交叉编译后的二进制初始化文件，用于初始化仿真时的内存。
+    * `*.mif`：Memory Initialization File。给 Vivado IP 用的。
 * `stream_copy/`：测试点 `stream_copy`。
     * `stream_copy.s`：交叉编译后的反汇编文件。
     * `stream_copy.si`：`cat stream_copy.s | grep "9fc.....:" > stream_copy.si`。用于去除反汇编文件中的提示信息，只保留指令信息。
@@ -71,7 +87,7 @@ NOTE: 这个不是官方的 golden_trace。
 `define TRACE_SAVE_PATH "/home/riteme/Code/nscscc/trace/perf_trace.txt"
 ```
 
-如果发现记录的 trace 末尾疑似不完整，请考虑在合适的位置加上 `$fclose(trace_file)`。例如：
+如果发现 trace 文件末尾疑似不完整，请考虑在合适的位置加上 `$fclose(trace_file)`。例如：
 
 ```verilog
 // mycpu_tb.v 的第 258 行
