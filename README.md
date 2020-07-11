@@ -12,6 +12,7 @@ NOTE: 这个不是官方的 golden_trace。
 * `.gitignore`
 * `playground.ipynb`：一个简单分析抓取到的 trace 的 IPython Notebook（Jupyter）。
 * `tracker.v`：trace 抓取的源码。
+* `compiled/`：交叉编译后的二进制初始化文件，用于初始化仿真时的内存。
 * `stream_copy/`：测试点 `stream_copy`。
     * `stream_copy.s`：交叉编译后的反汇编文件。
     * `stream_copy.si`：`cat stream_copy.s | grep "9fc.....:" > stream_copy.si`。用于去除反汇编文件中的提示信息，只保留指令信息。
