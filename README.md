@@ -1,5 +1,7 @@
 # 性能测试 trace
 
+NOTE: 这个不是官方的 golden_trace。
+
 包括完整的指令运行（来自 writeback 阶段的 debug 信号）、AXI 总线传输（来自 GS132 内部出来的 AXI 信号）。
 
 目前发现抓取到的 AXI 传输次数比理论计算出的传输次数要多，原因不明。
