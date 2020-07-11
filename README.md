@@ -36,8 +36,10 @@ NOTE: 这个不是官方的 golden_trace。
 
 ```
 [debug_wb_pc],[debug_wb_rf_wen],[debug_wb_rf_wnum],[debug_wb_rf_wdata]
-// PC 地址，寄存器 write_enable，寄存器编号，写入数据
+// PC 地址（虚拟地址），寄存器 write_enable，寄存器编号，写入数据
 ```
+
+注意虚拟地址的映射规则（MIPS32 中 `kseg0` 和 `kseg1` 的映射规则）。
 
 ### 注意
 
