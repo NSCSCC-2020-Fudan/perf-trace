@@ -113,8 +113,8 @@ x1faf_write_count: 155
 x1fc_read_count: 18197
 x1fc_write_count: 1202
 instr_count: 14867
-sw_count: 1199
-lw_count: 3191
+sw_count: 1209
+lw_count: 3195
 ```
 
 `x1faf_*` 和 `x1fc_*` 分别代表物理地址开头为 `0x1faf` 和 `0x1fc` 的读写。
