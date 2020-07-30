@@ -24,6 +24,8 @@ $ ls -1sh **/*.txt
 
 * `README.md`：此文件。
 * `.gitignore`
+* `branch.ipynb`：简单分析分支预测在性能测试上的效果。
+* `branch.py`：`branch.ipynb` 中的 Python 代码。
 * `playground.ipynb`：一个简单分析抓取到的 trace 的 IPython Notebook（Jupyter）。
 * `playground.py`：`playground.ipynb` 中的 Python 代码。
 * `tracker.v`：trace 抓取的源码。
