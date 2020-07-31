@@ -109,7 +109,7 @@ class BackwardsTakenForwardsNotTaken:
     def update(self, instr: Instruction, taken: bool):
         pass
 
-class XuYipei652e5766:
+class XuYipei64:
     '''@master 652e57666ec4ec09a5505541120e3627cca6eabb'''
 
     def __init__(self, n = 64):
@@ -143,8 +143,305 @@ class XuYipei652e5766:
             v = 0
         self.bpb[index] = v
 
+class XuYipei128:
+    def __init__(self, n = 128):
+        self.mask = 0x7f
+        self.shamt = 9
+        self.bpb = [0] * n
+        self.tag = [None] * n
+
+    def predict(self, instr: Instruction) -> bool:
+        index = (instr.addr >> 2) & self.mask
+        tag = instr.addr >> self.shamt
+
+        if self.tag[index] != tag:
+            self.tag[index] = tag
+            self.bpb[index] = 0b01
+        return self.bpb[index] > 1
+
+    def update(self, instr: Instruction, taken: bool):
+        index = (instr.addr >> 2) & self.mask
+        tag = instr.addr >> self.shamt
+        assert self.tag[index] == tag
+
+        v = self.bpb[index]
+        if taken:
+            v += 1
+        else:
+            v -= 1
+        if v > 3:
+            v = 3
+        if v < 0:
+            v = 0
+        self.bpb[index] = v
+
+class XuYipei256:
+    def __init__(self, n = 256):
+        self.mask = 0xff
+        self.shamt = 10
+        self.bpb = [0] * n
+        self.tag = [None] * n
+
+    def predict(self, instr: Instruction) -> bool:
+        index = (instr.addr >> 2) & self.mask
+        tag = instr.addr >> self.shamt
+
+        if self.tag[index] != tag:
+            self.tag[index] = tag
+            self.bpb[index] = 0b01
+        return self.bpb[index] > 1
+
+    def update(self, instr: Instruction, taken: bool):
+        index = (instr.addr >> 2) & self.mask
+        tag = instr.addr >> self.shamt
+        assert self.tag[index] == tag
+
+        v = self.bpb[index]
+        if taken:
+            v += 1
+        else:
+            v -= 1
+        if v > 3:
+            v = 3
+        if v < 0:
+            v = 0
+        self.bpb[index] = v
+
+class XuYipei64NoTag:
+    def __init__(self, n = 64):
+        self.mask = 0x3f
+        self.bpb = [0] * n
+
+    def predict(self, instr: Instruction) -> bool:
+        index = (instr.addr >> 2) & self.mask
+        return self.bpb[index] > 1
+
+    def update(self, instr: Instruction, taken: bool):
+        index = (instr.addr >> 2) & self.mask
+
+        v = self.bpb[index]
+        if taken:
+            v += 1
+        else:
+            v -= 1
+        if v > 3:
+            v = 3
+        if v < 0:
+            v = 0
+        self.bpb[index] = v
+
+class XuYipei128NoTag:
+    def __init__(self, n = 128):
+        self.mask = 0x7f
+        self.bpb = [0] * n
+
+    def predict(self, instr: Instruction) -> bool:
+        index = (instr.addr >> 2) & self.mask
+        return self.bpb[index] > 1
+
+    def update(self, instr: Instruction, taken: bool):
+        index = (instr.addr >> 2) & self.mask
+
+        v = self.bpb[index]
+        if taken:
+            v += 1
+        else:
+            v -= 1
+        if v > 3:
+            v = 3
+        if v < 0:
+            v = 0
+        self.bpb[index] = v
+
+class XuYipei256NoTag:
+    def __init__(self, n = 256):
+        self.mask = 0xff
+        self.bpb = [0] * n
+
+    def predict(self, instr: Instruction) -> bool:
+        index = (instr.addr >> 2) & self.mask
+        return self.bpb[index] > 1
+
+    def update(self, instr: Instruction, taken: bool):
+        index = (instr.addr >> 2) & self.mask
+
+        v = self.bpb[index]
+        if taken:
+            v += 1
+        else:
+            v -= 1
+        if v > 3:
+            v = 3
+        if v < 0:
+            v = 0
+        self.bpb[index] = v
+
+class XuYipei64GHT:
+    def __init__(self, n = 64):
+        self.mask = 0x1f
+        self.last = 0
+        self.bpb = [0] * n
+
+    def predict(self, instr: Instruction) -> bool:
+        index = (((instr.addr >> 2) & self.mask) << 1) | self.last
+        return self.bpb[index] > 1
+
+    def update(self, instr: Instruction, taken: bool):
+        index = (((instr.addr >> 2) & self.mask) << 1) | self.last
+        self.last = int(taken)
+
+        v = self.bpb[index]
+        if taken:
+            v += 1
+        else:
+            v -= 1
+        if v > 3:
+            v = 3
+        if v < 0:
+            v = 0
+        self.bpb[index] = v
+
+class XuYipei128GHT:
+    def __init__(self, n = 128):
+        self.mask = 0x3f
+        self.last = 0
+        self.bpb = [0] * n
+
+    def predict(self, instr: Instruction) -> bool:
+        index = (((instr.addr >> 2) & self.mask) << 1) | self.last
+        return self.bpb[index] > 1
+
+    def update(self, instr: Instruction, taken: bool):
+        index = (((instr.addr >> 2) & self.mask) << 1) | self.last
+        self.last = int(taken)
+
+        v = self.bpb[index]
+        if taken:
+            v += 1
+        else:
+            v -= 1
+        if v > 3:
+            v = 3
+        if v < 0:
+            v = 0
+        self.bpb[index] = v
+
+class XuYipei256GHT:
+    def __init__(self, n = 256):
+        self.mask = 0x7f
+        self.last = 0
+        self.bpb = [0] * n
+
+    def predict(self, instr: Instruction) -> bool:
+        index = (((instr.addr >> 2) & self.mask) << 1) | self.last
+        return self.bpb[index] > 1
+
+    def update(self, instr: Instruction, taken: bool):
+        index = (((instr.addr >> 2) & self.mask) << 1) | self.last
+        self.last = int(taken)
+
+        v = self.bpb[index]
+        if taken:
+            v += 1
+        else:
+            v -= 1
+        if v > 3:
+            v = 3
+        if v < 0:
+            v = 0
+        self.bpb[index] = v
+
+class XuYipei64GShare:
+    def __init__(self, n = 64):
+        self.mask = 0x3f
+        self.shamt = 5
+        self.last = 0
+        self.bpb = [0] * n
+
+    def predict(self, instr: Instruction) -> bool:
+        index = ((instr.addr >> 2) & self.mask) ^ (self.last << self.shamt)
+        return self.bpb[index] > 1
+
+    def update(self, instr: Instruction, taken: bool):
+        index = ((instr.addr >> 2) & self.mask) ^ (self.last << self.shamt)
+        self.last = int(taken)
+
+        v = self.bpb[index]
+        if taken:
+            v += 1
+        else:
+            v -= 1
+        if v > 3:
+            v = 3
+        if v < 0:
+            v = 0
+        self.bpb[index] = v
+
+class XuYipei128GShare:
+    def __init__(self, n = 128):
+        self.mask = 0x7f
+        self.shamt = 6
+        self.last = 0
+        self.bpb = [0] * n
+
+    def predict(self, instr: Instruction) -> bool:
+        index = ((instr.addr >> 2) & self.mask) ^ (self.last << self.shamt)
+        return self.bpb[index] > 1
+
+    def update(self, instr: Instruction, taken: bool):
+        index = ((instr.addr >> 2) & self.mask) ^ (self.last << self.shamt)
+        self.last = int(taken)
+
+        v = self.bpb[index]
+        if taken:
+            v += 1
+        else:
+            v -= 1
+        if v > 3:
+            v = 3
+        if v < 0:
+            v = 0
+        self.bpb[index] = v
+
+class XuYipei256GShare:
+    def __init__(self, n = 256):
+        self.mask = 0xff
+        self.shamt = 7
+        self.last = 0
+        self.bpb = [0] * n
+
+    def predict(self, instr: Instruction) -> bool:
+        index = ((instr.addr >> 2) & self.mask) ^ (self.last << self.shamt)
+        return self.bpb[index] > 1
+
+    def update(self, instr: Instruction, taken: bool):
+        index = ((instr.addr >> 2) & self.mask) ^ (self.last << self.shamt)
+        self.last = int(taken)
+
+        v = self.bpb[index]
+        if taken:
+            v += 1
+        else:
+            v -= 1
+        if v > 3:
+            v = 3
+        if v < 0:
+            v = 0
+        self.bpb[index] = v
+
 strategies = [
-    XuYipei652e5766,
+    XuYipei64,
+    XuYipei64NoTag,
+    XuYipei64GHT,
+    XuYipei64GShare,
+    XuYipei128,
+    XuYipei128NoTag,
+    XuYipei128GHT,
+    XuYipei128GShare,
+    XuYipei256,
+    XuYipei256NoTag,
+    XuYipei256GHT,
+    XuYipei256GShare,
     AlwaysTaken,
     AlwaysNotTaken,
     BackwardsTakenForwardsNotTaken

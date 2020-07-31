@@ -1,0 +1,194 @@
+# XuYipei64
+bitcount       86.40%, [2918, 1104]
+bubble_sort    68.55%, [12030, 12693]
+coremark       84.50%, [38421, 32751]
+crc32          93.34%, [2398, 47728]
+dhrystone      74.12%, [3402, 7027]
+quick_sort     79.79%, [16412, 15591]
+select_sort    94.69%, [7547, 44086]
+sha            96.21%, [2691, 20131]
+stream_copy    87.82%, [230, 1733]
+stringsearch   84.12%, [5681, 15831]
+(avg.)         86.53%
+
+# XuYipei64NoTag
+bitcount       91.97%, [2918, 1104]
+bubble_sort    69.45%, [12030, 12693]
+coremark       87.56%, [38421, 32751]
+crc32          97.24%, [2398, 47728]
+dhrystone      95.61%, [3402, 7027]
+quick_sort     80.44%, [16412, 15591]
+select_sort    95.62%, [7547, 44086]
+sha            97.94%, [2691, 20131]
+stream_copy    96.03%, [230, 1733]
+stringsearch   91.05%, [5681, 15831]
+(avg.)         89.82%
+
+# XuYipei64GHT
+bitcount       91.94%, [2918, 1104]
+bubble_sort    67.78%, [12030, 12693]
+coremark       86.82%, [38421, 32751]
+crc32          97.60%, [2398, 47728]
+dhrystone      94.92%, [3402, 7027]
+quick_sort     80.11%, [16412, 15591]
+select_sort    96.60%, [7547, 44086]
+sha            97.86%, [2691, 20131]
+stream_copy    95.52%, [230, 1733]
+stringsearch   90.72%, [5681, 15831]
+(avg.)         89.64%
+
+# XuYipei64GShare
+bitcount       92.02%, [2918, 1104]
+bubble_sort    69.90%, [12030, 12693]
+coremark       87.11%, [38421, 32751]
+crc32          97.12%, [2398, 47728]
+dhrystone      95.37%, [3402, 7027]
+quick_sort     80.72%, [16412, 15591]
+select_sort    96.94%, [7547, 44086]
+sha            97.75%, [2691, 20131]
+stream_copy    95.62%, [230, 1733]
+stringsearch   90.97%, [5681, 15831]
+(avg.)         89.96%
+
+# XuYipei128
+bitcount       87.42%, [2918, 1104]
+bubble_sort    69.06%, [12030, 12693]
+coremark       86.00%, [38421, 32751]
+crc32          95.28%, [2398, 47728]
+dhrystone      75.71%, [3402, 7027]
+quick_sort     80.58%, [16412, 15591]
+select_sort    95.48%, [7547, 44086]
+sha            96.74%, [2691, 20131]
+stream_copy    88.23%, [230, 1733]
+stringsearch   85.70%, [5681, 15831]
+(avg.)         87.74%
+
+# XuYipei128NoTag
+bitcount       91.57%, [2918, 1104]
+bubble_sort    69.94%, [12030, 12693]
+coremark       88.63%, [38421, 32751]
+crc32          97.71%, [2398, 47728]
+dhrystone      95.62%, [3402, 7027]
+quick_sort     80.70%, [16412, 15591]
+select_sort    95.85%, [7547, 44086]
+sha            98.02%, [2691, 20131]
+stream_copy    95.31%, [230, 1733]
+stringsearch   92.93%, [5681, 15831]
+(avg.)         90.41%
+
+# XuYipei128GHT
+bitcount       91.80%, [2918, 1104]
+bubble_sort    72.12%, [12030, 12693]
+coremark       88.15%, [38421, 32751]
+crc32          97.99%, [2398, 47728]
+dhrystone      95.40%, [3402, 7027]
+quick_sort     81.20%, [16412, 15591]
+select_sort    97.12%, [7547, 44086]
+sha            97.86%, [2691, 20131]
+stream_copy    95.26%, [230, 1733]
+stringsearch   91.34%, [5681, 15831]
+(avg.)         90.67%
+
+# XuYipei128GShare
+bitcount       91.87%, [2918, 1104]
+bubble_sort    71.68%, [12030, 12693]
+coremark       88.73%, [38421, 32751]
+crc32          97.53%, [2398, 47728]
+dhrystone      95.35%, [3402, 7027]
+quick_sort     81.19%, [16412, 15591]
+select_sort    97.08%, [7547, 44086]
+sha            97.97%, [2691, 20131]
+stream_copy    95.36%, [230, 1733]
+stringsearch   92.78%, [5681, 15831]
+(avg.)         90.80%
+
+# XuYipei256
+bitcount       92.49%, [2918, 1104]
+bubble_sort    70.32%, [12030, 12693]
+coremark       89.04%, [38421, 32751]
+crc32          97.19%, [2398, 47728]
+dhrystone      95.84%, [3402, 7027]
+quick_sort     81.98%, [16412, 15591]
+select_sort    95.80%, [7547, 44086]
+sha            98.18%, [2691, 20131]
+stream_copy    96.54%, [230, 1733]
+stringsearch   94.70%, [5681, 15831]
+(avg.)         90.76%
+
+# XuYipei256NoTag
+bitcount       91.84%, [2918, 1104]
+bubble_sort    70.22%, [12030, 12693]
+coremark       89.46%, [38421, 32751]
+crc32          97.73%, [2398, 47728]
+dhrystone      95.62%, [3402, 7027]
+quick_sort     81.70%, [16412, 15591]
+select_sort    95.84%, [7547, 44086]
+sha            97.97%, [2691, 20131]
+stream_copy    94.96%, [230, 1733]
+stringsearch   95.18%, [5681, 15831]
+(avg.)         90.91%
+
+# XuYipei256GHT
+bitcount       91.52%, [2918, 1104]
+bubble_sort    72.13%, [12030, 12693]
+coremark       89.08%, [38421, 32751]
+crc32          97.99%, [2398, 47728]
+dhrystone      95.38%, [3402, 7027]
+quick_sort     81.40%, [16412, 15591]
+select_sort    97.44%, [7547, 44086]
+sha            97.95%, [2691, 20131]
+stream_copy    94.85%, [230, 1733]
+stringsearch   93.15%, [5681, 15831]
+(avg.)         91.11%
+
+# XuYipei256GShare
+bitcount       91.20%, [2918, 1104]
+bubble_sort    71.95%, [12030, 12693]
+coremark       88.95%, [38421, 32751]
+crc32          97.98%, [2398, 47728]
+dhrystone      95.64%, [3402, 7027]
+quick_sort     81.27%, [16412, 15591]
+select_sort    97.44%, [7547, 44086]
+sha            97.95%, [2691, 20131]
+stream_copy    94.70%, [230, 1733]
+stringsearch   94.75%, [5681, 15831]
+(avg.)         91.17%
+
+# AlwaysTaken
+bitcount       27.45%, [2918, 1104]
+bubble_sort    51.34%, [12030, 12693]
+coremark       46.02%, [38421, 32751]
+crc32          95.22%, [2398, 47728]
+dhrystone      67.38%, [3402, 7027]
+quick_sort     48.72%, [16412, 15591]
+select_sort    85.38%, [7547, 44086]
+sha            88.21%, [2691, 20131]
+stream_copy    88.28%, [230, 1733]
+stringsearch   73.59%, [5681, 15831]
+(avg.)         68.41%
+
+# AlwaysNotTaken
+bitcount       72.55%, [2918, 1104]
+bubble_sort    48.66%, [12030, 12693]
+coremark       53.98%, [38421, 32751]
+crc32           4.78%, [2398, 47728]
+dhrystone      32.62%, [3402, 7027]
+quick_sort     51.28%, [16412, 15591]
+select_sort    14.62%, [7547, 44086]
+sha            11.79%, [2691, 20131]
+stream_copy    11.72%, [230, 1733]
+stringsearch   26.41%, [5681, 15831]
+(avg.)         31.59%
+
+# BackwardsTakenForwardsNotTaken
+bitcount       87.64%, [2918, 1104]
+bubble_sort    58.41%, [12030, 12693]
+coremark       76.71%, [38421, 32751]
+crc32          90.53%, [2398, 47728]
+dhrystone      80.63%, [3402, 7027]
+quick_sort     70.42%, [16412, 15591]
+select_sort    33.35%, [7547, 44086]
+sha            94.37%, [2691, 20131]
+stream_copy    41.62%, [230, 1733]
+stringsearch   86.87%, [5681, 15831]
+(avg.)         71.33%
