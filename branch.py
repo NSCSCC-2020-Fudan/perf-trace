@@ -210,7 +210,7 @@ class XuYipei256:
 class XuYipei64NoTag:
     def __init__(self, n = 64):
         self.mask = 0x3f
-        self.bpb = [0] * n
+        self.bpb = [0b01] * n
 
     def predict(self, instr: Instruction) -> bool:
         index = (instr.addr >> 2) & self.mask
@@ -233,7 +233,7 @@ class XuYipei64NoTag:
 class XuYipei128NoTag:
     def __init__(self, n = 128):
         self.mask = 0x7f
-        self.bpb = [0] * n
+        self.bpb = [0b01] * n
 
     def predict(self, instr: Instruction) -> bool:
         index = (instr.addr >> 2) & self.mask
@@ -256,7 +256,7 @@ class XuYipei128NoTag:
 class XuYipei256NoTag:
     def __init__(self, n = 256):
         self.mask = 0xff
-        self.bpb = [0] * n
+        self.bpb = [0b01] * n
 
     def predict(self, instr: Instruction) -> bool:
         index = (instr.addr >> 2) & self.mask
@@ -280,7 +280,7 @@ class XuYipei64GHT:
     def __init__(self, n = 64):
         self.mask = 0x1f
         self.last = 0
-        self.bpb = [0] * n
+        self.bpb = [0b01] * n
 
     def predict(self, instr: Instruction) -> bool:
         index = (((instr.addr >> 2) & self.mask) << 1) | self.last
@@ -305,7 +305,7 @@ class XuYipei128GHT:
     def __init__(self, n = 128):
         self.mask = 0x3f
         self.last = 0
-        self.bpb = [0] * n
+        self.bpb = [0b01] * n
 
     def predict(self, instr: Instruction) -> bool:
         index = (((instr.addr >> 2) & self.mask) << 1) | self.last
@@ -330,7 +330,7 @@ class XuYipei256GHT:
     def __init__(self, n = 256):
         self.mask = 0x7f
         self.last = 0
-        self.bpb = [0] * n
+        self.bpb = [0b01] * n
 
     def predict(self, instr: Instruction) -> bool:
         index = (((instr.addr >> 2) & self.mask) << 1) | self.last
@@ -356,7 +356,7 @@ class XuYipei64GShare:
         self.mask = 0x3f
         self.shamt = 5
         self.last = 0
-        self.bpb = [0] * n
+        self.bpb = [0b01] * n
 
     def predict(self, instr: Instruction) -> bool:
         index = ((instr.addr >> 2) & self.mask) ^ (self.last << self.shamt)
@@ -382,7 +382,7 @@ class XuYipei128GShare:
         self.mask = 0x7f
         self.shamt = 6
         self.last = 0
-        self.bpb = [0] * n
+        self.bpb = [0b01] * n
 
     def predict(self, instr: Instruction) -> bool:
         index = ((instr.addr >> 2) & self.mask) ^ (self.last << self.shamt)
@@ -408,7 +408,7 @@ class XuYipei256GShare:
         self.mask = 0xff
         self.shamt = 7
         self.last = 0
-        self.bpb = [0] * n
+        self.bpb = [0b01] * n
 
     def predict(self, instr: Instruction) -> bool:
         index = ((instr.addr >> 2) & self.mask) ^ (self.last << self.shamt)
